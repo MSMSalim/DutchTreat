@@ -8,34 +8,39 @@
     <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }
 
-<form method="post">
-    <div asp-validation-summary="ModelOnly"></div>
+<div class="col-md-6 offset-md-3">
+    <div class="card card-body bg-light">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
 
-    <label asp-for="Name">Your Name:</label>
-    <span asp-validation-for="Name"></span>
-    <br />
-    <input asp-for="Name" />
+            <div class="form-group">
+                <label asp-for="Name">Your Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
 
-    <br />
-    <label asp-for="Email">Email:</label>
-    <span asp-validation-for="Email"></span>
-    <br />
-    <input type="email" asp-for="Email" />
+            <div class="form-group">
+                <label asp-for="Email">Email:</label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
 
-    <br />
-    <label asp-for="Subject">Subject:</label>
-    <span asp-validation-for="Subject"></span>
-    <br />
-    <input type="text" asp-for="Subject" />
+            <div class="form-group">
+                <label asp-for="Subject">Subject:</label>
+                <input type="text" asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
 
-    <br />
-    <label asp-for="Message">Message:</label>
-    <span asp-validation-for="Message"></span>
-    <br />
-    <textarea rows="4" asp-for="Message"></textarea>
+            <div class="form-group">
+                <label asp-for="Message">Message:</label>
+                <textarea rows="4" asp-for="Message" class="form-control"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
 
-    <br />
-    <input type="submit" value="Send Message" />
-
-    <div>@ViewBag.UserMessage</div>
-</form>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope"></i>Send Message</button>
+                <div class="text-success">@ViewBag.UserMessage</div>
+            </div>
+        </form>
+    </div>
+</div>
