@@ -13,6 +13,8 @@
     <Folder Include="Views\" />
     <Folder Include="Views\App\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="Pages\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />

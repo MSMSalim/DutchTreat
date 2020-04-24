@@ -39,7 +39,8 @@ namespace DutchTreat
             }
             else
             {
-                // Add Error Page
+                // Add Error
+                app.UseExceptionHandler("/error");
             }
 
             app.UseStaticFiles();
