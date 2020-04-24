@@ -3,22 +3,37 @@
     ViewBag.Title = "Contact Us";
 }
 
+@section Scripts{
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
+
 <form method="post">
-     <label asp-for="Name">Your Name:</label>
-     <br />
-     <input asp-for="Name"/>
-     <br />
-     <label asp-for="Email">Email:</label>
-     <br />
-     <input type="email" asp-for="Email" />
-     <br />
-     <label asp-for="Subject">Subject:</label>
-     <br />
-     <input type="text" asp-for="Subject"/>
-     <br />
-     <label asp-for="Message">Message:</label>
-     <br />
-     <textarea rows="4" asp-for="Message"></textarea>
-     <br />
-     <input type="submit" value="Send Message" />
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <label asp-for="Name">Your Name:</label>
+    <span asp-validation-for="Name"></span>
+    <br />
+    <input asp-for="Name" />
+
+    <br />
+    <label asp-for="Email">Email:</label>
+    <span asp-validation-for="Email"></span>
+    <br />
+    <input type="email" asp-for="Email" />
+
+    <br />
+    <label asp-for="Subject">Subject:</label>
+    <span asp-validation-for="Subject"></span>
+    <br />
+    <input type="text" asp-for="Subject" />
+
+    <br />
+    <label asp-for="Message">Message:</label>
+    <span asp-validation-for="Message"></span>
+    <br />
+    <textarea rows="4" asp-for="Message"></textarea>
+
+    <br />
+    <input type="submit" value="Send Message" />
 </form>
