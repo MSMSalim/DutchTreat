@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "DutchConnectionString": "Data Source=127.0.0.1,1433;Initial Catalog=DutchTreatDb;User ID=sa;Password=P@55word"
+  }
+}
