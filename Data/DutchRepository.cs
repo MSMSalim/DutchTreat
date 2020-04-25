@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DutchTreat.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DutchTreat.Data
 {
@@ -14,6 +15,22 @@ namespace DutchTreat.Data
             this._ctx = ctx;
         }
 
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return _ctx.Orders
+                .Include(o => o.Items)
+                .ThenInclude(i => i.Product)
+                .ToList();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return this
+                .GetAllOrders()
+                .Where(order => order.Id == id)
+                .FirstOrDefault();
+        }
+
         public IEnumerable<Product> GetAllProducts()
         {
             return _ctx.Products
@@ -21,6 +38,7 @@ namespace DutchTreat.Data
                 .ToList();
         }
 
+      
         public IEnumerable<Product> GetProductsByCategory(string category)
         {
             return _ctx.Products
