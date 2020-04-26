@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DutchTreat.Data;
+using DutchTreat.Data.Entities;
+using DutchTreat.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -43,6 +45,44 @@ namespace DutchTreat.Controllers
             }
 
             return Ok(order);
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody]OrderViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var newOrder = new Order()
+            {
+               OrderDate = model.OrderDate,
+               OrderNumber = model.OrderNumber,
+               Id = model.OrderId
+            };
+
+            if(newOrder.OrderDate == DateTime.MinValue)
+            {
+                newOrder.OrderDate = DateTime.Now;
+            }
+
+            _dutchRepository.AddEntity(newOrder);
+            bool isSaved = _dutchRepository.SaveAll();
+
+            if(!isSaved)
+            {
+                return BadRequest("Failed to save new order");
+            }
+
+            var viewModel = new OrderViewModel()
+            {
+                OrderId = newOrder.Id,
+                OrderDate = newOrder.OrderDate,
+                OrderNumber = newOrder.OrderNumber
+            };
+
+            return Created($"/api/orders/{viewModel.OrderId}", viewModel);
         }
     }
 }
