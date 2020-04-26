@@ -26,3 +26,9 @@ dotnet ef migrations add SeedData
 dotnet ef migrations add Identity
 
 dotnet ef database drop
+
+#Introduce typescript
+
+ npm install -g typescript
+
+ run tsc from DutchTreat folder and it will generate the js and sourcemap files by looking at tsconfig.json
