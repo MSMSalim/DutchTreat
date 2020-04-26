@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using DutchTreat.Data;
 using DutchTreat.Data.Entities;
 using DutchTreat.ViewModels;
@@ -18,12 +19,15 @@ namespace DutchTreat.Controllers
     {
         private readonly IDutchRepository _dutchRepository;
         private readonly ILogger<OrdersController> _logger;
+        private readonly IMapper _mapper;
 
         public OrdersController(IDutchRepository dutchRepository,
-                                ILogger<OrdersController> logger)
+                                ILogger<OrdersController> logger,
+                                IMapper mapper)
         {
             this._dutchRepository = dutchRepository;
             this._logger = logger;
+            this._mapper = mapper;
         }
 
         [HttpGet]
@@ -31,7 +35,9 @@ namespace DutchTreat.Controllers
         {
             var orders = _dutchRepository.GetAllOrders();
 
-            return Ok(orders);
+            var mappedOrders = _mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(orders);
+
+            return Ok(mappedOrders);
         }
 
         [HttpGet("{id:int}")]
@@ -44,7 +50,9 @@ namespace DutchTreat.Controllers
                 return NotFound();
             }
 
-            return Ok(order);
+            OrderViewModel ovm = _mapper.Map<Order, OrderViewModel>(order);
+
+            return Ok(ovm);
         }
 
         [HttpPost]
@@ -55,12 +63,16 @@ namespace DutchTreat.Controllers
                 return BadRequest(ModelState);
             }
 
+            /*
             var newOrder = new Order()
             {
                OrderDate = model.OrderDate,
                OrderNumber = model.OrderNumber,
                Id = model.OrderId
             };
+            */
+
+            var newOrder = _mapper.Map<OrderViewModel, Order>(model);
 
             if(newOrder.OrderDate == DateTime.MinValue)
             {
@@ -75,12 +87,16 @@ namespace DutchTreat.Controllers
                 return BadRequest("Failed to save new order");
             }
 
+            /*
             var viewModel = new OrderViewModel()
             {
                 OrderId = newOrder.Id,
                 OrderDate = newOrder.OrderDate,
                 OrderNumber = newOrder.OrderNumber
             };
+            */
+
+            var viewModel = _mapper.Map<Order, OrderViewModel>(newOrder);
 
             return Created($"/api/orders/{viewModel.OrderId}", viewModel);
         }
