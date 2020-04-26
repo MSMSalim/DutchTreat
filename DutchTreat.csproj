@@ -19,6 +19,7 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Entities\" />
     <Folder Include="Data\Migrations\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
