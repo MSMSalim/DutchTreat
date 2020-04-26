@@ -31,9 +31,9 @@ namespace DutchTreat.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(bool includeItems = true)
         {
-            var orders = _dutchRepository.GetAllOrders();
+            var orders = _dutchRepository.GetAllOrders(includeItems);
 
             var mappedOrders = _mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(orders);
 

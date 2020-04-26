@@ -23,6 +23,16 @@ namespace DutchTreat.Data
                 .ToList();
         }
 
+        public IEnumerable<Order> GetAllOrders(bool includeItems)
+        {
+            if (includeItems)
+            {
+               return this.GetAllOrders();
+            }
+
+            return _ctx.Orders.ToList();
+        }
+
         public Order GetOrderById(int id)
         {
             return this
@@ -55,5 +65,7 @@ namespace DutchTreat.Data
         {
             _ctx.Add(model);
         }
+
+       
     }
 }
