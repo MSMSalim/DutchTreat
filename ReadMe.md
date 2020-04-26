@@ -19,3 +19,10 @@ dotnet ef database update
 To Create initial seed data migration script
 
 dotnet ef migrations add SeedData
+
+
+Identiy migration add storeuser
+
+dotnet ef migrations add Identity
+
+dotnet ef database drop
