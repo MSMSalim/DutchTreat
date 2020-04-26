@@ -1,5 +1,10 @@
 ﻿{
   "ConnectionStrings": {
     "DutchConnectionString": "Data Source=127.0.0.1,1433;Initial Catalog=DutchTreatDb;User ID=sa;Password=P@55word"
+  },
+  "Tokens": {
+    "Key": "sometokenkey123 sljf; ;lkj;sdlkj f;lsdf ",
+    "Issuer": "localhost",
+    "Audience": "salim"
   }
 }

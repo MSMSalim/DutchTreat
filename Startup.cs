@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text;
 using AutoMapper;
 using DutchTreat.Data;
 using DutchTreat.Data.Entities;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 namespace DutchTreat
 {
@@ -36,7 +38,18 @@ namespace DutchTreat
             // Enable cookie for website and JWT token support
             services.AddAuthentication()
                 .AddCookie()
-                .AddJwtBearer();
+                .AddJwtBearer(cfg => {
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
+                    var issuer = _config["Tokens:Issuer"];
+                    var audience = _config["Tokens:Audience"];
+
+                    cfg.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidIssuer = issuer,
+                        ValidAudience = audience,
+                        IssuerSigningKey = key
+                    };
+                });
 
             services.AddDbContext<DutchContext>(cfg =>
             {
