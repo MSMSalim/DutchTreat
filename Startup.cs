@@ -33,6 +33,11 @@ namespace DutchTreat
             })
             .AddEntityFrameworkStores<DutchContext>();
 
+            // Enable cookie for website and JWT token support
+            services.AddAuthentication()
+                .AddCookie()
+                .AddJwtBearer();
+
             services.AddDbContext<DutchContext>(cfg =>
             {
                 cfg.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
