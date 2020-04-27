@@ -50,3 +50,9 @@ cd dutch-app
 ng build
 
 ng serve
+
+#Create new ClientApp Folder in the root of this projexct
+and copy all files from src folder in angular dutch-app folder
+
+Then copy angular.json,tsconfig.app.json and tsconfig.json from angualar dutch-app folder to
+the root of this project i.e DutchTreat

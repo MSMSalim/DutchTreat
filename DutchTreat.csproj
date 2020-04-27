@@ -21,6 +21,7 @@
     <Folder Include="Data\Migrations\" />
     <Folder Include="Views\Account\" />
     <Folder Include="wwwroot\ts\" />
+    <Folder Include="ClientApp\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
@@ -40,6 +41,10 @@
     <Content Remove="tsconfig.json" />
     <Content Remove="wwwroot\ts\main.ts" />
     <Content Remove="wwwroot\ts\storecustomer.ts" />
+    <Content Remove="dutch-app\tslint.json" />
+    <Content Remove="dutch-app\e2e\tsconfig.json" />
+    <Content Remove="dutch-app\tsconfig.json" />
+    <Content Remove="dutch-app\tsconfig.spec.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\ts\main.ts">
