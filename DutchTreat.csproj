@@ -22,6 +22,7 @@
     <Folder Include="Views\Account\" />
     <Folder Include="wwwroot\ts\" />
     <Folder Include="ClientApp\" />
+    <Folder Include="ClientApp\app\shop\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
@@ -45,6 +46,42 @@
     <Content Remove="dutch-app\e2e\tsconfig.json" />
     <Content Remove="dutch-app\tsconfig.json" />
     <Content Remove="dutch-app\tsconfig.spec.json" />
+    <Content Remove="wwwroot\clientapp\main-es2015.js" />
+    <Content Remove="wwwroot\clientapp\runtime-es2015.js" />
+    <Content Remove="wwwroot\clientapp\vendor-es5.js" />
+    <Content Remove="wwwroot\clientapp\favicon.ico" />
+    <Content Remove="wwwroot\clientapp\styles-es2015.js.map" />
+    <Content Remove="wwwroot\clientapp\index.html" />
+    <Content Remove="wwwroot\clientapp\vendor-es2015.js" />
+    <Content Remove="wwwroot\clientapp\styles-es5.js.map" />
+    <Content Remove="wwwroot\clientapp\runtime-es5.js" />
+    <Content Remove="wwwroot\clientapp\styles-es2015.js" />
+    <Content Remove="wwwroot\clientapp\polyfills-es2015.js.map" />
+    <Content Remove="wwwroot\clientapp\main-es2015.js.map" />
+    <Content Remove="wwwroot\clientapp\polyfills-es2015.js" />
+    <Content Remove="wwwroot\clientapp\vendor-es2015.js.map" />
+    <Content Remove="wwwroot\clientapp\styles-es5.js" />
+    <Content Remove="wwwroot\clientapp\polyfills-es5.js.map" />
+    <Content Remove="wwwroot\clientapp\polyfills-es5.js" />
+    <Content Remove="wwwroot\clientapp\vendor-es5.js.map" />
+    <Content Remove="wwwroot\clientapp\runtime-es5.js.map" />
+    <Content Remove="wwwroot\clientapp\main-es5.js" />
+    <Content Remove="wwwroot\clientapp\runtime-es2015.js.map" />
+    <Content Remove="wwwroot\clientapp\main-es5.js.map" />
+    <Content Remove="wwwroot\clientapp\favicon.ico" />
+    <Content Remove="wwwroot\clientapp\index.html" />
+    <Content Remove="wwwroot\clientapp\runtime.js" />
+    <Content Remove="wwwroot\clientapp\polyfills.js" />
+    <Content Remove="wwwroot\clientapp\styles.js" />
+    <Content Remove="wwwroot\clientapp\main.js" />
+    <Content Remove="wwwroot\clientapp\main.js.map" />
+    <Content Remove="wwwroot\clientapp\styles.js.map" />
+    <Content Remove="wwwroot\clientapp\runtime.js.map" />
+    <Content Remove="wwwroot\clientapp\polyfills.js.map" />
+    <Content Remove="wwwroot\clientapp\vendor.js" />
+    <Content Remove="wwwroot\clientapp\favicon.ico" />
+    <Content Remove="wwwroot\clientapp\vendor.js.map" />
+    <Content Remove="wwwroot\clientapp\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\ts\main.ts">

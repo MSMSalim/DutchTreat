@@ -24,6 +24,7 @@ dotnet ef migrations add SeedData
 #Identiy migration add storeuser
 
 dotnet ef migrations add Identity
+dotnet ef migrations add IdentityAgain
 
 dotnet ef database drop
 
@@ -56,3 +57,6 @@ and copy all files from src folder in angular dutch-app folder
 
 Then copy angular.json,tsconfig.app.json and tsconfig.json from angualar dutch-app folder to
 the root of this project i.e DutchTreat
+
+#auto build the ClientApp so we don't have to do ng build manually after changing the angular code
+ng build --watch
