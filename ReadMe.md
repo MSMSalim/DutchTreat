@@ -32,3 +32,21 @@ dotnet ef database drop
  npm install -g typescript
 
  run tsc from DutchTreat folder and it will generate the js and sourcemap files by looking at tsconfig.json
+
+#Introduce angular
+
+npm install @angular/cli -g
+
+ng new --help
+
+With Dry Run
+ng new dutch-app --dryRun --skip-git --inline-template --inline-style
+
+Without Dry Run
+ng new dutch-app  --skip-git --inline-template --inline-style
+
+cd dutch-app
+
+ng build
+
+ng serve
