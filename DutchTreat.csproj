@@ -95,6 +95,30 @@
     <Content Remove="wwwroot\clientapp\vendor.js.map" />
     <Content Remove="wwwroot\clientapp\runtime.js.map" />
     <Content Remove="wwwroot\clientapp\main.js.map" />
+    <Content Remove="wwwroot\clientapp\styles.js" />
+    <Content Remove="wwwroot\clientapp\runtime.js" />
+    <Content Remove="wwwroot\clientapp\polyfills.js" />
+    <Content Remove="wwwroot\clientapp\main.js" />
+    <Content Remove="wwwroot\clientapp\runtime.js.map" />
+    <Content Remove="wwwroot\clientapp\polyfills.js.map" />
+    <Content Remove="wwwroot\clientapp\main.js.map" />
+    <Content Remove="wwwroot\clientapp\styles.js.map" />
+    <Content Remove="wwwroot\clientapp\vendor.js" />
+    <Content Remove="wwwroot\clientapp\vendor.js.map" />
+    <Content Remove="wwwroot\clientapp\index.html" />
+    <Content Remove="wwwroot\clientapp\favicon.ico" />
+    <Content Remove="wwwroot\clientapp\runtime.js" />
+    <Content Remove="wwwroot\clientapp\polyfills.js" />
+    <Content Remove="wwwroot\clientapp\main.js" />
+    <Content Remove="wwwroot\clientapp\styles.js" />
+    <Content Remove="wwwroot\clientapp\styles.js.map" />
+    <Content Remove="wwwroot\clientapp\main.js.map" />
+    <Content Remove="wwwroot\clientapp\polyfills.js.map" />
+    <Content Remove="wwwroot\clientapp\favicon.ico" />
+    <Content Remove="wwwroot\clientapp\runtime.js.map" />
+    <Content Remove="wwwroot\clientapp\vendor.js" />
+    <Content Remove="wwwroot\clientapp\index.html" />
+    <Content Remove="wwwroot\clientapp\vendor.js.map" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\ts\main.ts">
