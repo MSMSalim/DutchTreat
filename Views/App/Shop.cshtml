@@ -1,10 +1,22 @@
 ﻿@model IEnumerable<Product>
 
 @section Scripts {
-    <script src="~/ts/storecustomer.js"></script>
-    <script src="~/ts/main.js"></script>
+    <!--
+      <script src="~/ts/storecustomer.js"></script>
+      <script src="~/ts/main.js"></script>
+    -->
+
+    <script src="~/clientapp/runtime-es2015.js"></script>
+    <script src="~/clientapp/polyfills-es2015.js"></script>
+    <script src="~/clientapp/styles-es2015.js"></script>
+    <script src="~/clientapp/vendor-es2015.js"></script>
+    <script src="~/clientapp/main-es2015.js"></script>
 }
 
+<h1>Shop</h1>
+<the-shop></the-shop>
+
+<!--
 <h1>Shop</h1>
 <p>Count: @Model.Count()</p>
 
@@ -26,3 +38,4 @@
         </div>
     }
 </div>
+-->

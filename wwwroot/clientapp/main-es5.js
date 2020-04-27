@@ -145,7 +145,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppComponent,
-      selectors: [["my-app"]],
+      selectors: [["the-shop"]],
       decls: 4,
       vars: 1,
       consts: [[1, "content", 2, "text-align", "center"]],
@@ -179,7 +179,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'my-app',
+          selector: 'the-shop',
           template: "\n    <div style=\"text-align:center\" class=\"content\">\n      <h1>\n        Welcome to {{title}}!\n      </h1>\n     </div>\n    <router-outlet></router-outlet>\n  ",
           styles: []
         }]
