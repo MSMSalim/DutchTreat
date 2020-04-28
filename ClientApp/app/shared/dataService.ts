@@ -11,6 +11,9 @@ export class DataService {
     constructor(private http: HttpClient) {
     }
 
+    public token: string = "";
+    public tokenExpiration: Date;
+
     public products: Product[] = [];
     public order: Order = new Order();
 
@@ -21,6 +24,10 @@ export class DataService {
                     this.products = data;
                     return true;
                 }));
+    }
+
+    public get loginRequired(): boolean {
+       return this.token.length == 0 || this.tokenExpiration > new Date();
     }
 
     public addToOrder(product: Product) {

@@ -25,6 +25,7 @@
     <Folder Include="ClientApp\app\shop\" />
     <Folder Include="ClientApp\app\shared\" />
     <Folder Include="ClientApp\app\shop\checkout\" />
+    <Folder Include="ClientApp\app\shop\login\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
@@ -143,6 +144,8 @@
     <Content Remove="wwwroot\clientapp\polyfills.js.map" />
     <Content Remove="wwwroot\clientapp\favicon.ico" />
     <Content Remove="wwwroot\clientapp\vendor.js.map" />
+    <Content Remove="wwwroot\clientapp\index.html" />
+    <Content Remove="wwwroot\clientapp\favicon.ico" />
     <Content Remove="wwwroot\clientapp\index.html" />
   </ItemGroup>
   <ItemGroup>
