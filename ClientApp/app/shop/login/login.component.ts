@@ -16,8 +16,20 @@ export class Login {
         password: ""
     };
 
+    public errorMessage : string
+
     onLogin() {
-        //call the logging service
+        this.data
+            .login(this.creds)
+            .subscribe(success => {
+                if (this.data.order.items.length == 0) {
+                    this.router.navigate([""]);
+                }
+                else {
+                    this.router.navigate(["checkout"]);
+                }
+            }, err => this.errorMessage = "Failed to login");
+            
     }
 
 }
