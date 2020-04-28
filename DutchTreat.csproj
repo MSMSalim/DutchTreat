@@ -24,6 +24,7 @@
     <Folder Include="ClientApp\" />
     <Folder Include="ClientApp\app\shop\" />
     <Folder Include="ClientApp\app\shared\" />
+    <Folder Include="ClientApp\app\shop\checkout\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
@@ -143,6 +144,10 @@
     <Content Remove="wwwroot\clientapp\favicon.ico" />
     <Content Remove="wwwroot\clientapp\vendor.js.map" />
     <Content Remove="wwwroot\clientapp\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ClientApp\app\shop\checkout.component.ts" />
+    <None Remove="ClientApp\app\shop\checkout.component.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\ts\main.ts">
