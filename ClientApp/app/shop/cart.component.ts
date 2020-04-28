@@ -1,5 +1,6 @@
 ﻿import { Component } from "@angular/core";
 import { DataService } from '../shared/dataService';
+import { OrderItem } from '../shared/order';
 
 @Component({
     selector: "the-cart",
@@ -8,7 +9,7 @@ import { DataService } from '../shared/dataService';
 })
 export class Cart {
 
-    constructor(private data: DataService) {
+    constructor(public data: DataService) {
     }
 
 }
