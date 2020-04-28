@@ -18,7 +18,6 @@ export class Login {
 
     onLogin() {
         //call the logging service
-        alert(this.creds.username);
     }
 
 }
