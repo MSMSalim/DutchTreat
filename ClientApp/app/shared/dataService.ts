@@ -23,21 +23,28 @@ export class DataService {
                 }));
     }
 
-    public addToOrder(newProduct: Product) {
+    public addToOrder(product: Product) {
 
-        var item: OrderItem = new OrderItem();
+        let item: OrderItem = this.order.items
+            .find(i => i.productId == product.id)
 
-        item.productId = newProduct.id;
-        item.productArtist = newProduct.artist;
-        item.productArtId = newProduct.artId;
-        item.productCategory = newProduct.category;
-        item.productSize = newProduct.size;
-        item.productTitle = newProduct.title;
-        item.unitPrice = newProduct.price;
-        item.quantity = 1;
+        if (item) {
+            item.quantity++;
+        }
+        else {
+            item = new OrderItem();
 
-        this.order.items.push(item);
+            item.productId = product.id;
+            item.productArtist = product.artist;
+            item.productArtId = product.artId;
+            item.productCategory = product.category;
+            item.productSize = product.size;
+            item.productTitle = product.title;
+            item.unitPrice = product.price;
+            item.quantity = 1;
 
+            this.order.items.push(item);
+        }
     }
 
 }
